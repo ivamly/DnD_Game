@@ -1,4 +1,6 @@
-public abstract class Hero implements Motral {
+import java.util.List;
+
+public abstract class Hero implements Mortal {
     private final String name;
     private int health;
 
@@ -17,11 +19,14 @@ public abstract class Hero implements Motral {
 
     public void setHealth(int health) {
         this.health = health;
+        if (!isAlive()) {
+            System.out.println(name + " is dead!");
+        }
     }
 
     public abstract void takeDamage(int damage);
 
-    public abstract void attackEnemy(int damage, Enemy enemy);
+    public abstract void attackEnemy(List<Enemy> allEnemies);
 
     @Override
     public boolean isAlive() {
