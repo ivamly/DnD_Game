@@ -4,43 +4,34 @@ import java.util.List;
 public class BattleGround {
     public static void main(String[] args) {
 
-        int heroesWin = 0;
-        int enemiesWin = 0;
+        List<Hero> heroes = createHeroes();
 
-        for (int i = 0; i < 100; i++) {
+        List<Enemy> enemies = createEnemies();
 
-            List<Hero> heroes = createHeroes();
-
-            List<Enemy> enemies = createEnemies();
-
-            while (anyAlive(heroes) && anyAlive(enemies)) {
-                for (Hero hero : heroes) {
-                    if (anyAlive(enemies)) {
-                        hero.attackEnemy(enemies);
-                    } else {
-                        break;
-                    }
-                }
-
-                for (Enemy enemy : enemies) {
-                    if (anyAlive(heroes)) {
-                        enemy.attackEnemy(heroes);
-                    } else {
-                        break;
-                    }
+        while (anyAlive(heroes) && anyAlive(enemies)) {
+            for (Hero hero : heroes) {
+                if (anyAlive(enemies)) {
+                    hero.attackEnemy(enemies);
+                } else {
+                    break;
                 }
             }
 
-            if (anyAlive(heroes)) {
-                System.out.println("Heroes win!");
-                heroesWin++;
-            } else {
-                System.out.println("Enemies win!");
-                enemiesWin++;
+            for (Enemy enemy : enemies) {
+                if (anyAlive(heroes)) {
+                    enemy.attackEnemy(heroes);
+                } else {
+                    break;
+                }
             }
         }
-        System.out.println("Heroes win: " + heroesWin);
-        System.out.println("Enemies win: " + enemiesWin);
+
+        if (anyAlive(heroes)) {
+            System.out.println("Heroes are alive and win!");
+        } else {
+            System.out.println("Enemies are alive and win!");
+        }
+
     }
 
     private static List<Hero> createHeroes() {
