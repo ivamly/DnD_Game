@@ -1,10 +1,12 @@
+package com.ivmaly;
+
 import java.util.List;
 
-public abstract class Enemy implements Mortal {
+public abstract class Hero implements Mortal {
     private final String name;
     private int health;
 
-    public Enemy(String name, int health) {
+    public Hero(String name, int health) {
         this.name = name;
         this.health = health;
     }
@@ -26,7 +28,7 @@ public abstract class Enemy implements Mortal {
 
     public abstract void takeDamage(int damage);
 
-    public abstract void attackEnemy(List<Hero> allHeroes);
+    public abstract void attackEnemy(List<Enemy> allEnemies);
 
     @Override
     public boolean isAlive() {

@@ -1,3 +1,5 @@
+package com.ivmaly;
+
 import java.util.List;
 import java.util.Random;
 
