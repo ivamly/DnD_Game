@@ -1,6 +1,6 @@
-package com.ivmaly;
+package com.ivmaly.characters.utils;
 
-public enum Characteristics {
+public enum Ability {
     STRENGTH,
     DEXTERITY,
     CONSTITUTION,
