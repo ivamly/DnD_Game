@@ -1,6 +1,7 @@
 package com.ivmaly.character.conditions;
 
 import com.ivmaly.character.AbstractCharacter;
+import com.ivmaly.character.conditions.effects.ConditionEffect;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,7 +25,6 @@ public class ConditionManager {
     public void removeCondition(Condition condition, AbstractCharacter character) {
         ConditionEffect effect = conditions.remove(condition);
         effect.removeEffect(character);
-
     }
 
     public boolean hasCondition(Condition condition) {

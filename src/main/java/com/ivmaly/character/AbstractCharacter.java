@@ -2,9 +2,13 @@ package com.ivmaly.character;
 
 import com.ivmaly.character.abilities.Ability;
 import com.ivmaly.character.abilities.AbilityManager;
+import com.ivmaly.character.acts.ActManager;
+import com.ivmaly.character.acts.ActType;
+import com.ivmaly.character.advantagedisadvantage.AdvantageDisadvantage;
+import com.ivmaly.character.advantagedisadvantage.AdvantageDisadvantageManager;
 import com.ivmaly.character.conditions.Condition;
-import com.ivmaly.character.conditions.ConditionEffect;
 import com.ivmaly.character.conditions.ConditionManager;
+import com.ivmaly.character.conditions.effects.ConditionEffect;
 import com.ivmaly.character.skills.Skill;
 import com.ivmaly.character.skills.SkillManager;
 
@@ -14,11 +18,15 @@ public class AbstractCharacter {
     private final AbilityManager abilityManager;
     private final SkillManager skillManager;
     private final ConditionManager conditionManager;
+    private final ActManager actManager;
+    private final AdvantageDisadvantageManager advantageDisadvantageManager;
 
     public AbstractCharacter() {
         this.abilityManager = new AbilityManager();
         this.skillManager = new SkillManager();
         this.conditionManager = new ConditionManager();
+        this.actManager = new ActManager();
+        this.advantageDisadvantageManager = new AdvantageDisadvantageManager();
     }
 
     public Map<Ability, Integer> getAbilities() {
@@ -64,4 +72,30 @@ public class AbstractCharacter {
     public boolean hasCondition(Condition condition) {
         return conditionManager.hasCondition(condition);
     }
+
+    public Map<ActType, Integer> getActions() {
+        return actManager.getAvailableActions();
+    }
+
+    public void setAction(ActType actType, int value) {
+        actManager.setAvailableAction(actType, value);
+    }
+
+    public int getAction(ActType actType) {
+        return actManager.getAvailableAction(actType);
+    }
+
+    public Map<AdvantageDisadvantage, Boolean> getAdvantageDisadvantages() {
+        return advantageDisadvantageManager.getAdvantageDisadvantageEffects();
+    }
+
+    public void setAdvantageDisadvantageEffect(AdvantageDisadvantage effect, boolean value) {
+        advantageDisadvantageManager.setAdvantageDisadvantageEffect(effect, value);
+    }
+
+    public boolean isAdvantageDisadvantageEffect(AdvantageDisadvantage effect) {
+        return advantageDisadvantageManager.isAdvantageDisadvantageEffectActive(effect);
+    }
+
+
 }

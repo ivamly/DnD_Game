@@ -1,4 +1,4 @@
-package com.ivmaly.character.conditions;
+package com.ivmaly.character.conditions.effects;
 
 import com.ivmaly.character.AbstractCharacter;
 
