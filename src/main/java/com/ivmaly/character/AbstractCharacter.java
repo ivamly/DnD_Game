@@ -15,18 +15,34 @@ import com.ivmaly.character.skills.SkillManager;
 import java.util.Map;
 
 public class AbstractCharacter {
+    private final String name;
+    private int speed;
     private final AbilityManager abilityManager;
     private final SkillManager skillManager;
     private final ConditionManager conditionManager;
     private final ActManager actManager;
     private final AdvantageDisadvantageManager advantageDisadvantageManager;
 
-    public AbstractCharacter() {
+    public AbstractCharacter(String name, int speed) {
+        this.name = name;
+        this.speed = speed;
         this.abilityManager = new AbilityManager();
         this.skillManager = new SkillManager();
         this.conditionManager = new ConditionManager();
         this.actManager = new ActManager();
         this.advantageDisadvantageManager = new AdvantageDisadvantageManager();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(int speed) {
+        this.speed = speed;
     }
 
     public Map<Ability, Integer> getAbilities() {
@@ -96,6 +112,4 @@ public class AbstractCharacter {
     public boolean isAdvantageDisadvantageEffect(AdvantageDisadvantage effect) {
         return advantageDisadvantageManager.isAdvantageDisadvantageEffectActive(effect);
     }
-
-
 }
