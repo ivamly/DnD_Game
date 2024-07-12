@@ -1,4 +1,4 @@
-package com.ivmaly.characters.utils;
+package com.ivmaly.character.skills;
 
 public enum Skill {
     ATHLETICS,
