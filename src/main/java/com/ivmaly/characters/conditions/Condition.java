@@ -1,0 +1,24 @@
+package com.ivmaly.characters.conditions;
+
+public enum Condition {
+    BLINDED,
+    CHARMED,
+    DEAFENED,
+    FRIGHTENED,
+    GRAPPLED,
+    INCAPACITATED,
+    INVISIBLE,
+    PARALYZED,
+    PETRIFIED,
+    POISONED,
+    PRONE,
+    RESTRAINED,
+    STUNNED,
+    UNCONSCIOUS,
+    EXHAUSTION_LEVEL_1,
+    EXHAUSTION_LEVEL_2,
+    EXHAUSTION_LEVEL_3,
+    EXHAUSTION_LEVEL_4,
+    EXHAUSTION_LEVEL_5,
+    EXHAUSTION_LEVEL_6
+}

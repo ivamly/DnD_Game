@@ -1,6 +1,6 @@
 package com.ivmaly.items;
 
-import com.ivmaly.items.currency.Cost;
+import com.ivmaly.items.currencies.Cost;
 
 public interface Item {
     String getName();
