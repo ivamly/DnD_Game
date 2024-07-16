@@ -17,7 +17,6 @@ public class AbstractHeavyArmorTest {
         Cost cost = new Cost(50, Currency.GOLD);
         int baseArmorClass = 18;
         double weight = 25.0;
-
         armor = new TestHeavyArmor(name, cost, baseArmorClass, weight);
     }
 

@@ -7,5 +7,7 @@ public interface Item {
 
     Cost getCost();
 
+    void setCost(Cost cost);
+
     double getWeight();
 }

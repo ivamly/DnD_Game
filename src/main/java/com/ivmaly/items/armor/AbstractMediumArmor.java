@@ -2,7 +2,7 @@ package com.ivmaly.items.armor;
 
 import com.ivmaly.items.currency.Cost;
 
-public class AbstractMediumArmor extends AbstractArmor {
+public abstract class AbstractMediumArmor extends AbstractArmor {
 
     public AbstractMediumArmor(String name, Cost cost, int baseArmorClass, double weight) {
         super(name, ArmorType.MEDIUM_ARMOR, cost, baseArmorClass, weight);

@@ -1,5 +1,6 @@
-package com.ivmaly.items.armor;
+package com.ivmaly.items.armor.concrete.medium;
 
+import com.ivmaly.items.armor.ArmorType;
 import com.ivmaly.items.currency.Cost;
 import com.ivmaly.items.currency.Currency;
 import org.junit.jupiter.api.BeforeEach;
@@ -7,26 +8,22 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class AbstractMediumArmorTest {
+public class BreastplateArmorTest {
 
-    private AbstractMediumArmor armor;
+    private BreastplateArmor armor;
 
     @BeforeEach
     void setUp() {
-        String name = "Test Medium Armor";
-        Cost cost = new Cost(20, Currency.GOLD);
-        int baseArmorClass = 14;
-        double weight = 18.0;
-        armor = new TestMediumArmor(name, cost, baseArmorClass, weight);
+        armor = new BreastplateArmor();
     }
 
     @Test
     public void testConstructorAndGetters() {
-        assertEquals("Test Medium Armor", armor.getName());
+        assertEquals("Breastplate Armor", armor.getName());
         assertEquals(ArmorType.MEDIUM_ARMOR, armor.getType());
-        assertEquals(new Cost(20, Currency.GOLD), armor.getCost());
+        assertEquals(new Cost(400, Currency.GOLD), armor.getCost());
         assertEquals(14, armor.getBaseArmorClass());
-        assertEquals(18.0, armor.getWeight());
+        assertEquals(20.0, armor.getWeight());
     }
 
     @Test
@@ -36,7 +33,7 @@ public class AbstractMediumArmorTest {
     }
 
     @Test
-    public void testCalculateTotalArmorClass_PositiveModifierWithinLimit() {
+    public void testCalculateTotalArmorClass_PositiveModifier() {
         int totalArmorClass = armor.calculateTotalArmorClass(2);
         assertEquals(16, totalArmorClass);
     }
@@ -51,11 +48,5 @@ public class AbstractMediumArmorTest {
     public void testCalculateTotalArmorClass_NegativeModifier() {
         int totalArmorClass = armor.calculateTotalArmorClass(-1);
         assertEquals(13, totalArmorClass);
-    }
-
-    private static class TestMediumArmor extends AbstractMediumArmor {
-        public TestMediumArmor(String name, Cost cost, int baseArmorClass, double weight) {
-            super(name, cost, baseArmorClass, weight);
-        }
     }
 }
