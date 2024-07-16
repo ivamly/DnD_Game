@@ -1,5 +1,7 @@
 package com.ivmaly.items.currency;
 
+import java.util.Objects;
+
 public class Cost {
     private final int amount;
     private final Currency currency;
@@ -29,5 +31,18 @@ public class Cost {
     @Override
     public String toString() {
         return amount + " " + currency.name();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Cost cost = (Cost) o;
+        return amount == cost.amount && currency == cost.currency;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(amount, currency);
     }
 }
