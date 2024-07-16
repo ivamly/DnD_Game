@@ -1,4 +1,4 @@
-package com.ivmaly.equipment.coins;
+package com.ivmaly.items.currency;
 
 public enum Currency {
     COPPER, SILVER, GOLD, PLATINUM;

@@ -1,4 +1,4 @@
-package com.ivmaly.equipment.coins;
+package com.ivmaly.items.currency;
 
 public class Cost {
     private final int amount;
