@@ -1,23 +1,6 @@
 package com.ivmaly.items.currencies;
 
-import java.util.Objects;
-
-public class Cost {
-    private final int amount;
-    private final Currency currency;
-
-    public Cost(int amount, Currency currency) {
-        this.amount = amount;
-        this.currency = currency;
-    }
-
-    public int getAmount() {
-        return amount;
-    }
-
-    public Currency getCurrency() {
-        return currency;
-    }
+public record Cost(int amount, Currency currency) {
 
     public int toCopper() {
         return currency.toCopper(amount);
@@ -41,8 +24,4 @@ public class Cost {
         return amount == cost.amount && currency == cost.currency;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(amount, currency);
-    }
 }

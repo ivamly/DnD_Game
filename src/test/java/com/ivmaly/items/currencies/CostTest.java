@@ -24,20 +24,20 @@ public class CostTest {
     @Test
     public void testFromCopper() {
         Cost costFromCopperToSilver = Cost.fromCopper(10, Currency.SILVER);
-        assertEquals(1, costFromCopperToSilver.getAmount());
-        assertEquals(Currency.SILVER, costFromCopperToSilver.getCurrency());
+        assertEquals(1, costFromCopperToSilver.amount());
+        assertEquals(Currency.SILVER, costFromCopperToSilver.currency());
 
         Cost costFromCopperToGold = Cost.fromCopper(100, Currency.GOLD);
-        assertEquals(1, costFromCopperToGold.getAmount());
-        assertEquals(Currency.GOLD, costFromCopperToGold.getCurrency());
+        assertEquals(1, costFromCopperToGold.amount());
+        assertEquals(Currency.GOLD, costFromCopperToGold.currency());
 
         Cost costFromCopperToPlatinum = Cost.fromCopper(1000, Currency.PLATINUM);
-        assertEquals(1, costFromCopperToPlatinum.getAmount());
-        assertEquals(Currency.PLATINUM, costFromCopperToPlatinum.getCurrency());
+        assertEquals(1, costFromCopperToPlatinum.amount());
+        assertEquals(Currency.PLATINUM, costFromCopperToPlatinum.currency());
 
         Cost costFromCopperToCopper = Cost.fromCopper(1, Currency.COPPER);
-        assertEquals(1, costFromCopperToCopper.getAmount());
-        assertEquals(Currency.COPPER, costFromCopperToCopper.getCurrency());
+        assertEquals(1, costFromCopperToCopper.amount());
+        assertEquals(Currency.COPPER, costFromCopperToCopper.currency());
     }
 
     @Test
