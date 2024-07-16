@@ -56,8 +56,4 @@ public abstract class AbstractWeapon extends AbstractItem {
     public boolean hasWeaponProperty(WeaponProperty property) {
         return weaponPropertyManager.hasWeaponProperty(property);
     }
-
-    public WeaponPropertyManager getWeaponPropertyManager() {
-        return weaponPropertyManager;
-    }
 }
